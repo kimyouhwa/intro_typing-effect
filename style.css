@@ -1,0 +1,60 @@
+*{
+    /* 각각의 태그들이 마진 값이 있으므로 
+    0으로 설정 간격최소화 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 패딩이나 테두리를 추가해도 박스 사이즈는 
+    변하지 않고 고정적이다. content-box'는 패딩과 보더의 값이 
+    변경할때 함께 변경 된다.
+    2. 다양한 브라우저에 일관된 레이아웃 유지로 호환성 문제 줄어듬 
+    3. 복잡한 레이아웃에서도 안정적인 결과 
+     */
+}
+body{
+    background-color: rgb(115, 235, 195);
+
+}
+.wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: (-50%,-50%);
+    color: #803a1a;
+    text-align: center;
+}
+/* 로고이미지>> 택스트로저장>> 폰트 사이즈로 크기 조절 가능  */
+.material-symbols-outlined{
+   font-size: 10rem;
+}
+.lg-text{
+font-size: 2rem;
+font-weight: bold;
+margin: 5px;
+}
+.sm-text{
+font-size: 1.5rem;
+}
+#dynamic{
+    position: relative;
+    display: inline-block;
+    /*텍스트가 줄어 들따 위치가 자동 조정 인라인 블럭효과  */
+
+}
+/* 깜박이는 커서형태의 가상 요소 만들어 주기  */
+#dynamic::after{
+    content: "";
+    display:block;
+    position: absolute;
+    top: 0px;
+    right: -10px;      
+    width: 4px;
+    height: 100%;
+    background-color: #fff;
+
+}
+/* 커서가 일시적으로 active 할때 사라지는 효과*/
+#dynamic.active::after{
+    display: none; 
+    }
+/* 동적인 깜박임 효과는 자바스크립트로 실행  */
